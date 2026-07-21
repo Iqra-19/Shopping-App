@@ -7,7 +7,7 @@ function Navbar() {
       <nav className="navbar">
         <Link to="/" className="navbar-brand">
           <span className="brand-badge">🛍️</span>
-          <h2 className="brand-title">My Shopping</h2>
+          <h2 className="brand-title">ShopEase</h2>
         </Link>
 
         <div className="navbar-menu">

@@ -1,0 +1,44 @@
+/* Categories Section */
+.categories-section {
+  padding: 60px 80px;
+}
+
+/* Section Title */
+.categories-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/* Flexbox Row Container for Cards */
+.categories-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Individual Category Card */
+.category-card {
+  flex: 1;
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover Effect for Cards */
+.category-card:hover {
+  transform: translateY(-4px);
+  background-color: #e5e7eb;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}

@@ -1,15 +1,17 @@
-import React from 'react'
+import Hero from '../components/Hero/Hero'
+import Categories from '../components/Categories/Categories'
+import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts'
 
 function Home() {
-  return (
-    <section>
-      <h1>Welcome to ShopEase</h1>
+    return (
+        <>
+            <Hero />
 
-      <p>Discover the latest products at the best prices.</p>
+            <Categories />
 
-      <button>Shop Now</button>
-    </section>
-  )
+            <FeaturedProducts />
+        </>
+    )
 }
 
 export default Home
