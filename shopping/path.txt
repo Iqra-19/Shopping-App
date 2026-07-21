@@ -1,0 +1,464 @@
+# Modern Shopping Website (React + Firebase + FakeStore API)
+
+## Tech Stack
+
+* React.js
+* React Router
+* Firebase Authentication
+* FakeStore API
+* Context API
+* CSS
+
+---
+
+# Overall Website Structure
+
+```
+Navbar
+│
+├── Logo
+├── Search Bar
+├── Categories Dropdown
+├── Wishlist (Badge)
+├── Cart (Badge)
+└── Login / Profile
+
+--------------------------------
+
+Pages
+│
+├── Home
+├── Shop
+├── Product Details
+├── Cart
+├── Wishlist
+├── Login
+├── Register
+├── Profile
+├── Checkout
+└── Order Success
+
+--------------------------------
+
+Footer
+```
+
+---
+
+# Navbar
+
+### Purpose
+
+Provide navigation and quick access to important features.
+
+### Should Include
+
+* Brand Logo
+* Home
+* Search Bar
+* Categories Dropdown
+* Wishlist Icon + Badge
+* Cart Icon + Badge
+* Login / Profile
+* Logout (after login)
+* Sticky on Scroll
+* Responsive Mobile Menu
+
+---
+
+# Footer
+
+### Purpose
+
+Website information and useful links.
+
+### Should Include
+
+* Logo
+* About
+* Contact
+* Privacy Policy
+* Terms & Conditions
+* Social Media Links
+* Newsletter Subscription
+* Copyright
+
+---
+
+# Home Page
+
+### Purpose
+
+Welcome users and highlight products.
+
+### Sections
+
+* Hero Banner
+* Categories
+* Featured Products
+* Promotional Banner
+* Why Choose Us
+* Newsletter
+* Footer
+
+---
+
+# Shop Page
+
+### Purpose
+
+Browse all products.
+
+### Features
+
+* Search
+* Category Filter
+* Sort
+* Product Grid
+* Load More Button
+* Loading State
+* Error State
+* No Products Found State
+
+---
+
+# Product Card
+
+Each product card should contain
+
+* Product Image
+* Product Title
+* Category
+* Rating
+* Price
+* Wishlist Button
+* Add to Cart Button
+* View Details Button
+
+---
+
+# Product Details
+
+### Purpose
+
+Display complete product information.
+
+### Should Include
+
+* Large Product Image
+* Title
+* Description
+* Category
+* Rating
+* Price
+* Quantity Selector
+* Add to Cart
+* Wishlist
+* Related Products
+
+> **Do not add Color or Size selectors.** FakeStore API does not provide this data, so adding fake options adds complexity without improving the project.
+
+---
+
+# Cart
+
+### Purpose
+
+Review selected products before checkout.
+
+### Should Include
+
+* Product List
+* Quantity Increase
+* Quantity Decrease
+* Remove Item
+* Clear Cart
+* Coupon Input (UI only)
+* Price Summary
+
+  * Subtotal
+  * Discount
+  * Total
+* Checkout Button
+* Empty Cart State
+
+---
+
+# Wishlist
+
+### Purpose
+
+Save products for later.
+
+### Should Include
+
+* Saved Products
+* Remove from Wishlist
+* Move to Cart
+* Empty Wishlist State
+
+---
+
+# Checkout
+
+### Purpose
+
+Complete the order.
+
+### Should Include
+
+* Shipping Information
+* Delivery Address
+* Payment Method (Demo)
+* Order Summary
+* Place Order Button
+
+> No real payment gateway is required.
+
+---
+
+# Order Success
+
+### Purpose
+
+Confirm successful purchase.
+
+### Should Include
+
+* Success Illustration
+* Success Message
+* Order ID
+* Delivery Estimate
+* Continue Shopping Button
+
+---
+
+# Authentication
+
+### Register
+
+* Name
+* Email
+* Password
+* Confirm Password
+
+---
+
+### Login
+
+* Email
+* Password
+* Google Login
+* Forgot Password (Optional)
+
+---
+
+### Profile
+
+### Should Include
+
+* Profile Photo
+* Name
+* Email
+* Order History (Demo)
+* Logout Button
+
+---
+
+# Search
+
+Search by
+
+* Product Title
+* Category
+
+---
+
+# Filter
+
+Filter by
+
+* Category
+
+---
+
+# Sort
+
+Sort by
+
+* Price (Low → High)
+* Price (High → Low)
+* Rating
+* Name (A → Z)
+
+---
+
+# Firebase Features
+
+* Email Registration
+* Email Login
+* Google Login
+* Logout
+* Authentication State
+* Protected Routes
+
+---
+
+# Responsive Design
+
+### Desktop
+
+* Full Navbar
+* Multi-column Product Grid
+
+### Tablet
+
+* Smaller Product Grid
+
+### Mobile
+
+* Hamburger Menu
+* Responsive Cards
+* Responsive Navbar
+* Responsive Checkout
+
+---
+
+# Error & Loading States
+
+Always include
+
+* Loading Spinner
+* Error Message
+* Empty Cart
+* Empty Wishlist
+* No Search Results
+* 404 Page
+
+---
+
+# Components
+
+```
+Navbar
+Footer
+Hero
+ProductCard
+ProductGrid
+SearchBar
+CategoryFilter
+SortDropdown
+CartItem
+WishlistItem
+QuantitySelector
+Button
+Input
+Loader
+ErrorMessage
+ProtectedRoute
+```
+
+---
+
+# Context API
+
+```
+AuthContext
+CartContext
+WishlistContext
+```
+
+---
+
+# Services
+
+```
+Firebase Service
+
+FakeStore API Service
+```
+
+---
+
+# Final Folder Structure
+
+```text
+src
+│
+├── assets
+│
+├── components
+│   ├── Navbar
+│   ├── Footer
+│   ├── Hero
+│   ├── ProductCard
+│   ├── ProductGrid
+│   ├── SearchBar
+│   ├── CategoryFilter
+│   ├── SortDropdown
+│   ├── Loader
+│   ├── ErrorMessage
+│   └── ProtectedRoute
+│
+├── context
+│   ├── AuthContext
+│   ├── CartContext
+│   └── WishlistContext
+│
+├── hooks
+│
+├── pages
+│   ├── Home
+│   ├── Shop
+│   ├── ProductDetails
+│   ├── Cart
+│   ├── Wishlist
+│   ├── Login
+│   ├── Register
+│   ├── Profile
+│   ├── Checkout
+│   ├── OrderSuccess
+│   └── NotFound
+│
+├── services
+│   ├── firebase.js
+│   └── fakeStoreApi.js
+│
+├── styles
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+# Build Order (Recommended)
+
+1. Project Setup
+2. Folder Structure
+3. Routing
+4. Navbar
+5. Footer
+6. Home Page Layout
+7. Shop Page Layout
+8. Fetch Products (FakeStore API)
+9. Product Cards
+10. Product Details
+11. Search
+12. Category Filter
+13. Sorting
+14. Cart
+15. Wishlist
+16. Firebase Setup
+17. Register
+18. Login
+19. Google Authentication
+20. Protected Routes
+21. Profile
+22. Checkout
+23. Order Success
+24. Responsive Design
+25. Loading & Error States
+26. Final UI Polish
+
+
