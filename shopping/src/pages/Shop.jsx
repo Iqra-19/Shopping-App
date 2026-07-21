@@ -1,8 +1,10 @@
-import React from 'react'
+import ProductGrid from "../components/ProductGrid/ProductGrid"
 
-function Shop() {
+function Shop( {products} ) {
   return (
-    <div>Shop</div>
+    <>
+      <ProductGrid products={products}/>
+    </>
   )
 }
 

@@ -1,15 +1,16 @@
 import Hero from '../components/Hero/Hero'
 import Categories from '../components/Categories/Categories'
-import FeaturedProducts from '../components/FeaturedProducts/FeaturedProducts'
+import ProductGrid from '../components/ProductGrid/ProductGrid'
 
-function Home() {
+function Home( {products} ) {
     return (
         <>
             <Hero />
 
             <Categories />
 
-            <FeaturedProducts />
+            <h2>Featured Products</h2>
+            <ProductGrid products={products}/> 
         </>
     )
 }
