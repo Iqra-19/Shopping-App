@@ -9,8 +9,9 @@ function Home( {products} ) {
 
             <Categories />
 
-            <h2>Featured Products</h2>
-            <ProductGrid products={products}/> 
+            <ProductGrid 
+             title="Featured Products"
+            products={products}/> 
         </>
     )
 }

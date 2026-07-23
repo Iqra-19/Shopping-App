@@ -1,44 +1,58 @@
 /* Categories Section */
 .categories-section {
-  padding: 60px 80px;
+  padding: 2.5rem 0;
 }
 
 /* Section Title */
 .categories-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 32px;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 2rem;
   text-align: center;
+  letter-spacing: -0.02em;
 }
 
 /* Flexbox Row Container for Cards */
 .categories-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 /* Individual Category Card */
 .category-card {
-  flex: 1;
-  padding: 30px 20px;
+  padding: 2.25rem 1.5rem;
   text-align: center;
-  background-color: #f3f4f6;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #1f2937;
+  background-color: #ffffff;
+  border-radius: 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
   cursor: pointer;
-  border: 1px solid #e5e7eb;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Hover Effect for Cards */
 .category-card:hover {
-  transform: translateY(-4px);
-  background-color: #e5e7eb;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+  background-color: #ffffff;
+  border-color: #c7d2fe;
+  box-shadow: 0 14px 28px -4px rgba(79, 70, 229, 0.15);
+  color: #4f46e5;
 }
+
+@media (max-width: 992px) {
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .categories-container {
+    grid-template-columns: 1fr;
+  }
+}
+
