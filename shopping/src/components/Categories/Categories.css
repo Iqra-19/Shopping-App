@@ -1,58 +1,124 @@
-/* Categories Section */
+/* ==========================================================================
+   LUXURY CATEGORY SECTION STYLES (Matching Reference Image 2)
+   ========================================================================== */
+
 .categories-section {
-  padding: 2.5rem 0;
+  padding: 64px 0;
+  width: 100%;
 }
 
-/* Section Title */
-.categories-title {
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 2rem;
+/* Centered Header & Accent Subhead */
+.categories-header {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.categories-subhead {
+  font-family: 'Poppins', 'Manrope', sans-serif;
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #C58B5B;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.categories-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #222222;
+  margin: 0;
   letter-spacing: -0.02em;
 }
 
-/* Flexbox Row Container for Cards */
+/* Container for Category Cards */
 .categories-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 /* Individual Category Card */
 .category-card {
-  padding: 2.25rem 1.5rem;
+  padding: 32px 24px;
   text-align: center;
-  background-color: #ffffff;
-  border-radius: 16px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #1e293b;
+  background-color: #FFFFFF;
+  border-radius: 18px;
   cursor: pointer;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #ECE7E2;
+  box-shadow: 0 8px 30px rgba(34, 34, 34, 0.04);
+  transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-/* Hover Effect for Cards */
+/* Circular Icon Container matching Reference Image 2 */
+.category-icon-wrapper {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #F7F3EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border: 1px solid #ECE7E2;
+  transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.category-icon {
+  font-size: 2rem;
+  color: #C58B5B;
+  transition: transform 250ms ease, color 250ms ease;
+}
+
+.category-name {
+  font-family: 'Poppins', 'Manrope', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #222222;
+  margin: 0;
+  transition: color 250ms ease;
+}
+
+/* Hover Effect for Category Cards */
 .category-card:hover {
-  transform: translateY(-5px);
-  background-color: #ffffff;
-  border-color: #c7d2fe;
-  box-shadow: 0 14px 28px -4px rgba(79, 70, 229, 0.15);
-  color: #4f46e5;
+  transform: translateY(-4px);
+  border-color: #C58B5B;
+  box-shadow: 0 14px 36px rgba(34, 34, 34, 0.08);
+}
+
+.category-card:hover .category-icon-wrapper {
+  background-color: #C58B5B;
+  border-color: #C58B5B;
+  transform: scale(1.05);
+}
+
+.category-card:hover .category-icon {
+  color: #FFFFFF;
+}
+
+.category-card:hover .category-name {
+  color: #C58B5B;
 }
 
 @media (max-width: 992px) {
   .categories-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
 @media (max-width: 576px) {
   .categories-container {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
+
 

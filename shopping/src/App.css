@@ -1,41 +1,42 @@
 :root {
-  /* Modern Color Palette */
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-light: #e0e7ff;
-  --primary-glow: rgba(79, 70, 229, 0.25);
-  
-  --secondary: #06b6d4;
-  --accent: #ec4899;
-  --accent-purple: #8b5cf6;
-  
-  --text-dark: #0f172a;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
-  
-  --bg-body: #f8fafc;
-  --bg-surface: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.85);
-  
-  --border-color: #e2e8f0;
-  --border-hover: #cbd5e1;
-  
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  --shadow-color: 0 14px 28px -4px rgba(79, 70, 229, 0.18);
-  
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  /* Reference Mockup Color Palette */
+  --bg-main: #FAF8F4;
+  --bg-section: #F7F3EE;
+  --bg-card: #FFFFFF;
+
+  --text-primary: #222222;
+  --text-secondary: #6E6E6E;
+  --text-light: #A09A93;
+
+  --accent: #C58B5B;
+  --accent-hover: #AA7348;
+  --border: #ECE7E2;
+  --rating: #D79A28;
+  --success: #4F8A5B;
+
+  /* Strict Spacing Scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+
+  /* Elevation & Shadows */
+  --shadow-subtle: 0 4px 20px rgba(34, 34, 34, 0.03);
+  --shadow-hover: 0 12px 32px rgba(34, 34, 34, 0.07);
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Poppins', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   --max-width: 1280px;
-  
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-full: 9999px;
-  
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Standardized Components */
+  --btn-height: 46px;
+  --btn-radius: 12px;
+  --btn-font-weight: 600;
+
+  --transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 * {
@@ -50,15 +51,22 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-body);
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.03) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.03) 0px, transparent 50%);
-  color: var(--text-main);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+.heading-serif,
+.logo-text,
+.page-title,
+.categories-title {
+  font-family: var(--font-serif) !important;
 }
 
 #root {
@@ -72,15 +80,16 @@ main.app-content {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2.5rem 1.5rem;
-  animation: fadeIn 0.4s ease-in-out;
+  padding: var(--space-xl) var(--space-sm);
+  animation: fadeIn 250ms ease-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -93,44 +102,51 @@ a {
   transition: var(--transition);
 }
 
-button, input, select {
-  font-family: inherit;
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--bg-main);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 5px;
+  background: #DED6CB;
+  border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #C5BBAE;
 }
 
 /* Fallback styling for simple text pages like Cart, Wishlist, Login */
-main.app-content > div:only-child {
-  background: #ffffff;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 4rem 2rem;
+main.app-content>div:only-child {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: var(--space-2xl) var(--space-lg);
   text-align: center;
-  margin: 2rem auto;
-  max-width: 600px;
-  box-shadow: var(--shadow-md);
+  margin: var(--space-xl) auto;
+  max-width: 580px;
+  box-shadow: var(--shadow-subtle);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--text-primary);
+
   position: relative;
   overflow: hidden;
 }
 
-main.app-content > div:only-child::before {
-  content: '🛍️';
+main.app-content>div:only-child::before {
+  /* content: '🛍️'; */
   display: block;
   font-size: 3.5rem;
   margin-bottom: 1rem;

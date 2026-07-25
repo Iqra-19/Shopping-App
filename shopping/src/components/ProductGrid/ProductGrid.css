@@ -1,7 +1,7 @@
 /* Featured Products Section */
 .featured-products,
 .product {
-  padding: 2rem 0;
+  padding: var(--space-xl) 0;
   width: 100%;
 }
 
@@ -9,12 +9,13 @@
 .featured-products h2,
 .product h2,
 main.app-content > h2 {
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 2rem;
+  font-family: var(--font-serif);
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
   text-align: left;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   position: relative;
   display: inline-block;
 }
@@ -24,35 +25,33 @@ main.app-content > h2::after {
   content: '';
   display: block;
   width: 48px;
-  height: 4px;
-  background: linear-gradient(90deg, #4f46e5, #818cf8);
+  height: 3px;
+  background-color: var(--accent);
   border-radius: 2px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
-/* Product Grid (4 columns on desktop) */
+/* Product Grid (Exactly 3 columns per row on desktop) */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
 }
 
 /* Responsive Grid Breakpoints */
-@media (max-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
   }
 }
 
 @media (max-width: 576px) {
   .product-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 }
+
+
 
