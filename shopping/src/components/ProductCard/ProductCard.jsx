@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom"
+import { useWishlish } from "../../hooks/useWishlish";
 
-function ProductCard( { product, wishlist, handleWishlist} ) {
+function ProductCard( { product} ) {
   
   const navigate = useNavigate();
+
+  const { wishlist, toggleWishlist} = useWishlish();
 
   // Compute original price if discountPercentage exists
   const hasDiscount = product.discountPercentage && product.discountPercentage > 0;
@@ -22,7 +25,7 @@ function ProductCard( { product, wishlist, handleWishlist} ) {
                   className="card-wishlist-btn"
                   title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
                   type="button"
-                  onClick={() => handleWishlist(product)}
+                  onClick={() => toggleWishlist(product)}
               >
                   <i
                       className={

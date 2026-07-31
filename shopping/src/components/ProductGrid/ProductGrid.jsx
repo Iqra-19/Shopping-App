@@ -1,10 +1,8 @@
-
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductGrid.css'
 
-function ProductGrid( {title, products, wishlist, handleWishlist} ) {
+function ProductGrid( {title, products} ) {
   
-  console.log("wishlist at grid", wishlist);
   return (
    <section className="featured-products">
 
@@ -15,8 +13,6 @@ function ProductGrid( {title, products, wishlist, handleWishlist} ) {
           <ProductCard 
               key={product.id}
               product={product}
-              wishlist={wishlist}
-              handleWishlist={handleWishlist}
           />
         ) )}
 

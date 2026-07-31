@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useWishlish } from "../hooks/useWishlish";
 
-function Wishlist( {wishlist, setWishlist, handleWishlist} ) {
+function Wishlist() {
+
+  const {wishlist, toggleWishlist} = useWishlish();
 
   if(wishlist.length <= 0){
     return (
@@ -21,7 +24,7 @@ function Wishlist( {wishlist, setWishlist, handleWishlist} ) {
               <p> Price: {product.price} </p>
               
               <Link to={`/product/${product.id}`}> View details </Link>
-              <button onClick={() => handleWishlist(product)}>
+              <button onClick={() => toggleWishlist(product)}>
                   Remove
               </button>
           </div>

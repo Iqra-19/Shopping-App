@@ -3,9 +3,8 @@ import Categories from '../components/Categories/Categories'
 import ProductGrid from '../components/ProductGrid/ProductGrid'
 import Wishlist from './Wishlist'
 
-function Home( {products, wishlist,handleWishlist} ) {
+function Home( {products} ) {
     
-    console.log("Wishlist at home", wishlist);
     return (
         <>
             <Hero />
@@ -15,8 +14,7 @@ function Home( {products, wishlist,handleWishlist} ) {
             <ProductGrid 
              title="Featured Products"
             products={products}
-            wishlist={wishlist}
-            handleWishlist={handleWishlist}/> 
+            /> 
         </>
     )
 }

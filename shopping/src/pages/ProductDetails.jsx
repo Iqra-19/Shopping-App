@@ -1,10 +1,16 @@
 import { useParams } from "react-router-dom"
+import { useWishlish } from "../hooks/useWishlish";
+
+import { useCart } from "../hooks/useCart";
 
 import ProductGrid from "../components/ProductGrid/ProductGrid";
 import './ProductDetails.css'
 
-function ProductDetails( {products, cart, setCart, wishlist, setWishlist, handleWishlist} ) {
-  
+function ProductDetails( {products} ) {
+    
+    const {wishlist, toggleWishlist} = useWishlish();
+    const {cart, addToCart} = useCart();
+
     const { id } = useParams();
     const product = products.find(
         (item) => item.id === Number(id)        // Number(id) --> string to Number 
@@ -18,36 +24,6 @@ function ProductDetails( {products, cart, setCart, wishlist, setWishlist, handle
         item.category === product.category &&
         item.id !== product.id)
         .slice(0,3)
-    
-    const handleAddToCart = () => {
-        setCart( (prevCart) => {
-
-            const existingProduct = prevCart.find( (item) => item.id === product.id );
-
-            if(existingProduct){
-                return prevCart.map( (item) => 
-                        item.id === product.id 
-                            ? {
-                                ...item,
-                                quantity : item.quantity + 1
-                            }
-                            : item
-                    );
-            }
-            return[
-                ...prevCart,
-                    {
-                        id: product.id,
-                        title: product.title,
-                        price: product.price,
-                        thumbnail: product.thumbnail,
-                        quantity: 1,
-                    }
-            ]
-
-        } )
-    }
-    //console.log("cart",cart);
 
     const isInCart = cart.some(
         (item) => item.id === product.id
@@ -103,7 +79,7 @@ function ProductDetails( {products, cart, setCart, wishlist, setWishlist, handle
                 </p>
 
                 <div className="product-action">
-                    <button className="cart-btn" onClick={handleAddToCart}>
+                    <button className="cart-btn" onClick={() => addToCart(product)}>
                         <i className="fa-solid fa-bag-shopping"></i>
 
                         {isInCart ? " Added to Cart" : " Add to Cart"}
@@ -111,7 +87,7 @@ function ProductDetails( {products, cart, setCart, wishlist, setWishlist, handle
                     
                     <button
                         className="wishlist-btn"
-                        onClick={() => handleWishlist(product)}
+                        onClick={() => toggleWishlist(product)}
                     >
                         <i
                             className={
@@ -150,8 +126,7 @@ function ProductDetails( {products, cart, setCart, wishlist, setWishlist, handle
         <ProductGrid 
             title="Related Products"
             products={releteProducts}
-            wishlist={wishlist}
-            handleWishlist={handleWishlist}/>
+            />
     </>
   )
 }

@@ -2,9 +2,12 @@ import { NavLink, Link } from 'react-router-dom';
 import './Navbar.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useWishlish } from '../hooks/useWishlish';
+import { useCart } from '../hooks/useCart';
 
-function Navbar( {cart, wishlist, setWishlist} ) {
-  
+function Navbar() {
+
+  const {cart} = useCart();
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
@@ -23,6 +26,8 @@ function Navbar( {cart, wishlist, setWishlist} ) {
       return total + item.quantity;
     }, 0
   )
+
+  const { wishlist } = useWishlish();
   
   return (
     <header className="navbar-header">

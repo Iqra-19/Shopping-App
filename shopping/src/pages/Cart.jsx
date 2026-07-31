@@ -1,6 +1,8 @@
-import React from 'react'
+import { useCart } from "../hooks/useCart";
 
-function Cart( {cart, increaseQuantity, decreaseQuantity, removeItem} ) {
+function Cart( {} ) {
+
+  const {cart, increaseQuantity, decreaseQuantity, removeItem} = useCart();
   
   if (cart.length === 0){
     return (
