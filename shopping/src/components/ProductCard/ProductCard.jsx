@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useNavigate } from "react-router-dom"
 import { useWishlish } from "../../hooks/useWishlish";
 
@@ -78,6 +80,7 @@ function ProductCard( { product} ) {
   )
 }
 
-export default ProductCard
+export default React.memo(ProductCard);
+
 
 
