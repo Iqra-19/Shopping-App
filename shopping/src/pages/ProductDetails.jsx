@@ -20,32 +20,32 @@ function ProductDetails( {products, cart, setCart, wishlist, setWishlist, handle
         .slice(0,3)
     
     const handleAddToCart = () => {
-        const existingProduct = cart.find( (item) => item.id === product.id );
+        setCart( (prevCart) => {
 
-        if(existingProduct){
-            setCart(
-                cart.map( (item) => 
-                    item.id === product.id 
-                        ? {
-                            ...item,
-                            quantity : item.quantity + 1
-                        }
-                        : item
-                )
-            )
-        }
-        else{
-            setCart([
-                ...cart,
-                {
-                    id: product.id,
-                    title: product.title,
-                    price: product.price,
-                    thumbnail: product.thumbnail,
-                    quantity: 1,
-                }
-            ])
-        }
+            const existingProduct = prevCart.find( (item) => item.id === product.id );
+
+            if(existingProduct){
+                return prevCart.map( (item) => 
+                        item.id === product.id 
+                            ? {
+                                ...item,
+                                quantity : item.quantity + 1
+                            }
+                            : item
+                    );
+            }
+            return[
+                ...prevCart,
+                    {
+                        id: product.id,
+                        title: product.title,
+                        price: product.price,
+                        thumbnail: product.thumbnail,
+                        quantity: 1,
+                    }
+            ]
+
+        } )
     }
     //console.log("cart",cart);
 

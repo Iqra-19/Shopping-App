@@ -34,9 +34,9 @@ function App() {
 
   /* ============================  Cart  ============================  */
   const increaseQuantity = (id) => {
-    setCart (
-      cart.map( (item) => 
-        item.id ===id 
+    setCart( (prevCart) => 
+      prevCart.map( (item) => 
+        item.id === id 
           ? {
             ...item, 
             quantity : item.quantity +1
@@ -47,8 +47,8 @@ function App() {
   };
 
   const decreaseQuantity = (id) => {
-    setCart (
-      cart.map( (item) => 
+    setCart ( (prevCart) =>
+      prevCart.map( (item) => 
         item.id ===id 
           ? {
             ...item, 
@@ -63,8 +63,8 @@ function App() {
   };
 
   const removeItem = (id) => {
-    setCart(
-      cart.filter ( (item) => item.id !== id )
+    setCart( (prevCart) =>
+      prevCart.filter ( (item) => item.id !== id )
     );
   };
 
