@@ -1,86 +1,59 @@
 import React from "react";
-
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useWishlish } from "../../hooks/useWishlish";
+import "./ProductCard.css";
 
-function ProductCard( { product} ) {
-  
+function ProductCard({ product }) {
   const navigate = useNavigate();
+  const { wishlist, toggleWishlist } = useWishlish();
 
-  const { wishlist, toggleWishlist} = useWishlish();
+  const isWishlisted = wishlist.some((item) => item.id === product.id);
 
-  // Compute original price if discountPercentage exists
-  const hasDiscount = product.discountPercentage && product.discountPercentage > 0;
-  const originalPrice = hasDiscount 
-    ? (product.price / (1 - product.discountPercentage / 100)).toFixed(2)
-    : null;
+  // Review count calculation
+  const reviewCount = product.reviews ? product.reviews.length : Math.floor((product.rating || 4.5) * 28);
 
-    const isWishlisted = wishlist.some(
-        (item) => item.id === product.id
-    );
-  
   return (
-    
-        <div className="product-card">
-            <div className="product-image">
-              <button
-                  className="card-wishlist-btn"
-                  title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
-                  type="button"
-                  onClick={() => toggleWishlist(product)}
-              >
-                  <i
-                      className={
-                          isWishlisted
-                              ? "fa-solid fa-heart"
-                              : "fa-regular fa-heart"
-                      }
-                  ></i>
-              </button>
-              <img src={product.thumbnail} alt={product.title} />
-            </div>
+    <div 
+      className="product-card"
+      onClick={() => navigate(`/product/${product.id}`)}
+    >
+      {/* Floating Heart Wishlist Button */}
+      <button
+        className="card-wishlist-btn"
+        title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleWishlist(product);
+        }}
+      >
+        <i className={isWishlisted ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i>
+      </button>
 
-            <div className="product-card-body">
-              {product.category && (
-                <span className="product-category-text">{product.category}</span>
-              )}
-              
-              <h3>{product.title}</h3>
-              
-              <div className="product-price-row">
-                <span className="product-price">${product.price}</span>
-                {hasDiscount && (
-                  <span className="product-old-price">${originalPrice}</span>
-                )}
-              </div>
-              
-              {product.rating && (
-                <div className="product-rating">
-                  <span className="stars">
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </span>
-                  <span className="rating-count">({product.reviews ? product.reviews.length : Math.floor(product.rating * 24)})</span>
-                </div>
-              )}
-            </div>
+      {/* Product Image Container */}
+      <div className="product-image-container">
+        <img src={product.thumbnail} alt={product.title} className="product-thumb" />
+      </div>
 
-            <button
-              className="product-card-btn"
-              onClick={ () => navigate(`/product/${product.id}`) }
-              type="button"
-            >
-              <i className="fa-regular fa-eye"></i> View Details
-            </button>
+      {/* Product Details */}
+      <div className="product-info">
+        <h3 className="product-title" title={product.title}>{product.title}</h3>
+        
+        <div className="product-rating-row">
+          <div className="stars">
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+          </div>
+          <span className="rating-count">({reviewCount})</span>
         </div>
-    
-  )
+
+        <div className="product-price">${product.price}</div>
+      </div>
+    </div>
+  );
 }
 
 export default React.memo(ProductCard);
-
-
-

@@ -1,124 +1,137 @@
 /* ==========================================================================
-   LUXURY CATEGORY SECTION STYLES (Matching Reference Image 2)
+   CIRCULAR CATEGORIES SECTION STYLES (SHOPLY MOCKUP)
    ========================================================================== */
 
 .categories-section {
-  padding: 64px 0;
+  margin-bottom: 56px;
   width: 100%;
 }
 
-/* Centered Header & Accent Subhead */
+/* Header with Title on Left, View All on Right */
 .categories-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.categories-subhead {
-  font-family: 'Poppins', 'Manrope', sans-serif;
-  font-size: 0.775rem;
-  font-weight: 700;
-  color: #C58B5B;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
 }
 
 .categories-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 2.25rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: #222222;
+  color: #2B3026;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
-/* Container for Category Cards */
-.categories-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-/* Individual Category Card */
-.category-card {
-  padding: 32px 24px;
-  text-align: center;
-  background-color: #FFFFFF;
-  border-radius: 18px;
+.view-all-btn {
+  background: none;
+  border: none;
+  font-family: 'Manrope', 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #383D32;
   cursor: pointer;
-  border: 1px solid #ECE7E2;
-  box-shadow: 0 8px 30px rgba(34, 34, 34, 0.04);
-  transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 200ms ease;
+}
+
+.view-all-btn i {
+  font-size: 0.8rem;
+  transition: transform 200ms ease;
+}
+
+.view-all-btn:hover {
+  color: #434D35;
+}
+
+.view-all-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* 8-Column Circular Category Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.category-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 250ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Circular Icon Container matching Reference Image 2 */
-.category-icon-wrapper {
-  width: 96px;
-  height: 96px;
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Circle Image Holder */
+.category-image-wrapper {
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  background-color: #F7F3EE;
+  background-color: #EFECE6;
+  overflow: hidden;
+  margin-bottom: 12px;
+  border: 2px solid #E6E1D7;
+  transition: all 250ms ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
-  border: 1px solid #ECE7E2;
-  transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 14px rgba(43, 48, 38, 0.04);
 }
 
-.category-icon {
-  font-size: 2rem;
-  color: #C58B5B;
-  transition: transform 250ms ease, color 250ms ease;
+.category-card:hover .category-image-wrapper {
+  border-color: #434D35;
+  box-shadow: 0 8px 20px rgba(67, 77, 53, 0.16);
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.08);
 }
 
 .category-name {
-  font-family: 'Poppins', 'Manrope', sans-serif;
-  font-size: 1.05rem;
+  font-family: 'Manrope', 'Poppins', sans-serif;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #222222;
-  margin: 0;
-  transition: color 250ms ease;
-}
-
-/* Hover Effect for Category Cards */
-.category-card:hover {
-  transform: translateY(-4px);
-  border-color: #C58B5B;
-  box-shadow: 0 14px 36px rgba(34, 34, 34, 0.08);
-}
-
-.category-card:hover .category-icon-wrapper {
-  background-color: #C58B5B;
-  border-color: #C58B5B;
-  transform: scale(1.05);
-}
-
-.category-card:hover .category-icon {
-  color: #FFFFFF;
+  color: #2B3026;
+  transition: color 200ms ease;
 }
 
 .category-card:hover .category-name {
-  color: #C58B5B;
+  color: #434D35;
 }
 
-@media (max-width: 992px) {
-  .categories-container {
+/* Responsive Grid */
+@media (max-width: 1100px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .categories-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 20px;
+  }
+
+  .category-image-wrapper {
+    width: 90px;
+    height: 90px;
   }
 }
-
-@media (max-width: 576px) {
-  .categories-container {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
-

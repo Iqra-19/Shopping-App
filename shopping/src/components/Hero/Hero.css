@@ -1,248 +1,237 @@
 /* ==========================================================================
-   LUXURY HERO SECTION STYLES (Matching Reference Image 1)
+   HERO BANNER & TRUST FEATURE BAR STYLES (SHOPLY MOCKUP)
    ========================================================================== */
 
-.hero,
-.hero-section {
+.hero-wrapper {
+  margin-bottom: 48px;
+}
+
+/* 1. Hero Main Banner Card */
+.hero-card {
+  background: linear-gradient(135deg, #EFECE6 0%, #E7E3DA 100%);
+  border-radius: 24px;
+  padding: 56px 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 64px 56px;
-  min-height: 580px;
   gap: 48px;
-  background: radial-gradient(circle at 80% 50%, #EFE8DF 0%, #F7F3EE 75%);
-  border-radius: 24px;
-  margin: 20px 0 56px 0;
-  border: 1px solid #ECE7E2;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  min-height: 440px;
+  border: 1px solid #E2DDD3;
 }
 
-/* Soft Decorative Shape behind product image */
-.hero-section::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -40px;
-  transform: translateY(-50%);
-  width: 480px;
-  height: 480px;
-  background-color: rgba(239, 233, 225, 0.55);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Left Content Area */
 .hero-content {
-  flex: 1.15;
-  z-index: 1;
+  flex: 1;
+  max-width: 500px;
+  z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
-  background-color: #FAF8F4;
-  border: 1px solid #ECE7E2;
-  border-radius: 9999px;
-  color: #C58B5B;
   font-size: 0.775rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
+  color: #3E4833;
   text-transform: uppercase;
-  margin-bottom: 24px;
-  width: fit-content;
-  box-shadow: 0 2px 6px rgba(34, 34, 34, 0.02);
+  margin-bottom: 20px;
 }
 
 .hero-badge i {
   font-size: 0.8rem;
 }
 
-.hero-content h1 {
+.hero-title {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 3.5rem;
+  font-size: 3.4rem;
   font-weight: 700;
-  color: #222222;
-  line-height: 1.12;
-  margin-bottom: 20px;
-  letter-spacing: -0.03em;
+  color: #2B3026;
+  line-height: 1.14;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
 }
 
-.hero-content p {
-  font-family: 'Poppins', 'Manrope', sans-serif;
-  font-size: 1.125rem;
-  color: #6E6E6E;
-  line-height: 1.65;
-  max-width: 500px;
-  margin-bottom: 36px;
+.hero-description {
+  font-family: 'Manrope', 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  color: #5A5F52;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  font-weight: 400;
 }
 
-/* Redesigned 48px #C58B5B CTA Button */
-.hero-actions button {
+/* Dark Olive Pill CTA Button */
+.hero-cta-btn {
   height: 48px;
-  padding: 0 32px;
-  font-family: 'Poppins', 'Manrope', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
+  padding: 0 28px;
+  background-color: #434D35;
   color: #FFFFFF;
-  background-color: #C58B5B;
   border: none;
-  border-radius: 14px;
+  border-radius: 9999px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(197, 139, 91, 0.25);
-  transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  width: fit-content;
+  transition: all 250ms ease;
+  box-shadow: 0 4px 14px rgba(67, 77, 53, 0.2);
 }
 
-.hero-actions button::after {
-  content: '→';
-  font-size: 1.1rem;
-  transition: transform 250ms ease;
-}
-
-.hero-actions button:hover {
-  background-color: #AA7348;
+.hero-cta-btn:hover {
+  background-color: #343C29;
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(197, 139, 91, 0.35);
+  box-shadow: 0 6px 18px rgba(67, 77, 53, 0.3);
 }
 
-.hero-actions button:hover::after {
+.hero-cta-btn i {
+  font-size: 0.85rem;
+  transition: transform 200ms ease;
+}
+
+.hero-cta-btn:hover i {
   transform: translateX(4px);
 }
 
-.hero-actions button:active {
-  transform: scale(0.98);
-}
-
-/* Trust Badges matching Reference Image 1 */
-.hero-trust-badges {
+/* Pagination Dots */
+.hero-pagination {
+  margin-top: 36px;
   display: flex;
   align-items: center;
-  gap: 36px;
-  margin-top: 48px;
-  padding-top: 28px;
-  border-top: 1px solid #ECE7E2;
+  gap: 8px;
 }
 
-.trust-badge {
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #C2BCB0;
+  transition: all 250ms ease;
+}
+
+.dot.active {
+  width: 24px;
+  border-radius: 9999px;
+  background-color: #434D35;
+}
+
+/* Hero Media Image */
+.hero-media {
+  flex: 1.1;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  gap: 10px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #222222;
-}
-
-.trust-badge i {
-  color: #C58B5B;
-  font-size: 1.1rem;
-}
-
-/* Right Showcase Card */
-.hero-image {
-  flex: 0.85;
-  height: 380px;
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  border: 1px solid #ECE7E2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(34, 34, 34, 0.04);
+  height: 100%;
   position: relative;
   z-index: 1;
-  padding: 36px;
-  transition: all 250ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 580px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(43, 48, 38, 0.08);
+  transition: transform 300ms ease;
 }
 
 .hero-image:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(34, 34, 34, 0.07);
+  transform: scale(1.01);
 }
 
-.hero-showcase-card {
+/* 2. Feature Highlights Bar */
+.features-bar {
+  margin-top: 20px;
+  background-color: #FAF8F5;
+  border: 1px solid #E6E1D7;
+  border-radius: 16px;
+  padding: 24px 32px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
   align-items: center;
   gap: 16px;
-  text-align: center;
+  flex: 1;
+  justify-content: center;
 }
 
-.showcase-icon {
-  width: 84px;
-  height: 84px;
-  border-radius: 16px;
-  background-color: #F8F6F3;
-  color: #C58B5B;
+.feature-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #EFECE6;
+  color: #434D35;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
-  border: 1px solid #ECE7E2;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
-.showcase-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.4rem;
+.feature-text h4 {
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #222222;
+  color: #2B3026;
+  margin: 0 0 2px 0;
+  font-family: 'Manrope', sans-serif;
 }
 
-.showcase-tag {
+.feature-text p {
   font-size: 0.8rem;
-  font-weight: 700;
-  color: #D79A28;
-  background-color: #FFFDF5;
-  border: 1px solid #F3E5C8;
-  padding: 4px 14px;
-  border-radius: 9999px;
+  color: #707469;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
 }
 
-/* Responsive Hero Layout */
+.feature-divider {
+  width: 1px;
+  height: 36px;
+  background-color: #E6E1D7;
+}
+
+/* Responsive Styles */
 @media (max-width: 992px) {
-  .hero-section {
+  .hero-card {
     flex-direction: column;
-    padding: 48px 24px;
+    padding: 40px 32px;
     text-align: center;
-    min-height: auto;
   }
 
-  .hero-badge {
-    margin-left: auto;
-    margin-right: auto;
+  .hero-content {
+    align-items: center;
+    max-width: 100%;
   }
 
-  .hero-content h1 {
+  .hero-title {
     font-size: 2.5rem;
   }
 
-  .hero-content p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-actions button {
-    margin: 0 auto;
-  }
-
-  .hero-trust-badges {
-    justify-content: center;
-    flex-wrap: wrap;
+  .features-bar {
+    flex-direction: column;
     gap: 20px;
+    padding: 24px;
   }
 
-  .hero-image {
+  .feature-item {
+    justify-content: flex-start;
     width: 100%;
-    height: 280px;
+  }
+
+  .feature-divider {
+    display: none;
   }
 }
-

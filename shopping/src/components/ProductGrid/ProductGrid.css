@@ -1,57 +1,82 @@
-/* Featured Products Section */
-.featured-products,
-.product {
-  padding: var(--space-xl) 0;
+/* ==========================================================================
+   PRODUCT GRID STYLES (VERTICAL MULTI-ROW GRID LAYOUT)
+   ========================================================================== */
+
+.featured-products {
+  margin-bottom: 64px;
   width: 100%;
 }
 
-/* Section Title */
-.featured-products h2,
-.product h2,
-main.app-content > h2 {
-  font-family: var(--font-serif);
-  font-size: 2.15rem;
+/* Header Area */
+.product-grid-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.product-grid-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: var(--space-lg);
-  text-align: left;
-  letter-spacing: -0.025em;
-  position: relative;
-  display: inline-block;
+  color: #2B3026;
+  margin: 0;
+  letter-spacing: -0.01em;
 }
 
-.featured-products h2::after,
-main.app-content > h2::after {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 3px;
-  background-color: var(--accent);
-  border-radius: 2px;
-  margin-top: 8px;
+.view-all-btn {
+  background: none;
+  border: none;
+  font-family: 'Manrope', 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #383D32;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 200ms ease;
 }
 
-/* Product Grid (Exactly 3 columns per row on desktop) */
+.view-all-btn i {
+  font-size: 0.8rem;
+  transition: transform 200ms ease;
+}
+
+.view-all-btn:hover {
+  color: #434D35;
+}
+
+.view-all-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* Multi-Row Vertical Grid Layout (6 Columns on Desktop) */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  width: 100%;
 }
 
 /* Responsive Grid Breakpoints */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
+    gap: 16px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
   .product-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
+    gap: 16px;
   }
 }
-
-
-

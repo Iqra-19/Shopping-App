@@ -1,0 +1,546 @@
+/* ==========================================================================
+   CART PAGE STYLES (SHOPLY MOCKUP DESIGN)
+   ========================================================================== */
+
+.cart-page-container {
+  max-width: 1380px;
+  margin: 0 auto 64px auto;
+  padding: 0 32px;
+}
+
+/* Empty Cart View */
+.cart-empty-container {
+  background-color: #FAF8F5;
+  border: 1px solid #E6E1D7;
+  border-radius: 20px;
+  padding: 64px 32px;
+  text-align: center;
+  max-width: 580px;
+  margin: 48px auto;
+}
+
+.cart-empty-icon {
+  font-size: 3.5rem;
+  color: #434D35;
+  margin-bottom: 16px;
+}
+
+.cart-empty-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2B3026;
+  margin: 0 0 10px 0;
+}
+
+.cart-empty-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  color: #707469;
+  margin-bottom: 24px;
+}
+
+.continue-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background-color: #434D35;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background-color 200ms ease;
+}
+
+.continue-btn:hover {
+  background-color: #343C29;
+  color: #FFFFFF;
+}
+
+/* Filled Cart Header */
+.cart-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 16px 0 28px 0;
+}
+
+.cart-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2B3026;
+  margin: 0 0 6px 0;
+}
+
+.cart-title span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #707469;
+}
+
+.cart-breadcrumbs {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  color: #707469;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-breadcrumbs a {
+  color: #2B3026;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.continue-shopping-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #383D32;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 200ms ease;
+}
+
+.continue-shopping-link:hover {
+  color: #434D35;
+}
+
+/* 2-Column Main Cart Layout */
+.cart-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+/* Left Section: Table & Coupon */
+.cart-left-section {
+  background-color: #FAF8F5;
+  border: 1px solid #E6E1D7;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.cart-table-header {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1.2fr 1fr 40px;
+  padding: 0 16px 14px 16px;
+  border-bottom: 1px solid #E6E1D7;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #707469;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header-center {
+  text-align: center;
+}
+
+/* Items List */
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-row {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1.2fr 1fr 40px;
+  align-items: center;
+  padding: 20px 16px;
+  border-bottom: 1px solid #E6E1D7;
+}
+
+.cart-item-row:last-child {
+  border-bottom: none;
+}
+
+.item-info-col {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.item-thumb-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background-color: #F5F2EB;
+  border: 1px solid #E8E3D8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.item-thumb-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.item-details h4 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #2B3026;
+  margin: 0 0 4px 0;
+}
+
+.item-variant {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.775rem;
+  color: #707469;
+  margin-bottom: 6px;
+}
+
+.item-stock-badge {
+  display: inline-block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #3F6946;
+  background-color: #EFECE6;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.item-price-col {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2B3026;
+  text-align: right;
+}
+
+.item-qty-col {
+  display: flex;
+  justify-content: center;
+}
+
+.qty-control-pill {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D6D0C4;
+  border-radius: 9999px;
+  height: 36px;
+  width: 100px;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color: #FFFFFF;
+}
+
+.qty-control-pill button {
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2B3026;
+  cursor: pointer;
+}
+
+.qty-control-pill span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #2B3026;
+}
+
+.item-total-col {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #2B3026;
+  text-align: right;
+}
+
+.item-remove-btn {
+  background: transparent;
+  border: none;
+  color: #707469;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: color 200ms ease;
+}
+
+.item-remove-btn:hover {
+  color: #C75B5B;
+}
+
+/* Coupon Card */
+.coupon-card {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E6E1D7;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.coupon-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #383D32;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.coupon-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  max-width: 320px;
+}
+
+.coupon-form input {
+  flex: 1;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #D6D0C4;
+  background-color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.825rem;
+  outline: none;
+}
+
+.apply-coupon-btn {
+  height: 38px;
+  padding: 0 18px;
+  background-color: #434D35;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.apply-coupon-btn:hover {
+  background-color: #343C29;
+}
+
+/* Right Section: Order Summary Card */
+.cart-summary-card {
+  background-color: #FAF8F5;
+  border: 1px solid #E6E1D7;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-title {
+  font-family: 'Manrope', 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2B3026;
+  margin: 0 0 20px 0;
+}
+
+.summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  color: #5A5F52;
+}
+
+.summary-row.free-text span:last-child {
+  color: #3F6946;
+  font-weight: 700;
+}
+
+.summary-divider {
+  height: 1px;
+  background-color: #E6E1D7;
+  margin: 10px 0 16px 0;
+}
+
+.summary-total-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: 'Manrope', sans-serif;
+  margin-bottom: 16px;
+}
+
+.summary-total-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2B3026;
+}
+
+.summary-total-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #2B3026;
+}
+
+.saved-tag {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.775rem;
+  color: #3F6946;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Action Buttons */
+.checkout-btn {
+  width: 100%;
+  height: 46px;
+  background-color: #434D35;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 200ms ease;
+  box-shadow: 0 4px 14px rgba(67, 77, 53, 0.2);
+}
+
+.checkout-btn:hover {
+  background-color: #343C29;
+  transform: translateY(-1px);
+}
+
+.or-divider {
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94988C;
+  margin: 14px 0;
+  position: relative;
+}
+
+.upi-checkout-btn {
+  width: 100%;
+  height: 44px;
+  background-color: #FFFFFF;
+  color: #2B3026;
+  border: 1px solid #2B3026;
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 200ms ease;
+}
+
+.upi-checkout-btn:hover {
+  background-color: #FAF8F5;
+  border-color: #434D35;
+  color: #434D35;
+}
+
+/* Trust Badges List inside Summary Card */
+.summary-trust-list {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #E6E1D7;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summary-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trust-mini-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #EFECE6;
+  color: #434D35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.trust-mini-text h5 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2B3026;
+  margin: 0;
+}
+
+.trust-mini-text p {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.725rem;
+  color: #707469;
+  margin: 0;
+}
+
+/* Responsive Cart Layout */
+@media (max-width: 1024px) {
+  .cart-main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-table-header {
+    display: none;
+  }
+
+  .cart-item-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px 0;
+  }
+
+  .item-price-col, .item-total-col {
+    text-align: left;
+  }
+}

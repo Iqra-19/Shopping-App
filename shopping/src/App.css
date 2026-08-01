@@ -1,18 +1,23 @@
 :root {
-  /* Reference Mockup Color Palette */
-  --bg-main: #FAF8F4;
-  --bg-section: #F7F3EE;
+  /* Reference Mockup Olive & Warm Linen Color Palette */
+  --bg-main: #FAF8F5;
+  --bg-section: #F3EFE6;
   --bg-card: #FFFFFF;
 
-  --text-primary: #222222;
-  --text-secondary: #6E6E6E;
-  --text-light: #A09A93;
+  --text-primary: #2B3026;
+  --text-secondary: #63675C;
+  --text-light: #94988C;
 
-  --accent: #C58B5B;
-  --accent-hover: #AA7348;
-  --border: #ECE7E2;
-  --rating: #D79A28;
-  --success: #4F8A5B;
+  --accent: #434D35;
+  --accent-hover: #343C29;
+  --accent-light: #ECEAE2;
+  --border: #E6E1D7;
+  --rating: #D4A017;
+  --success: #3F6946;
+
+  /* Topbar Olive */
+  --topbar-bg: #3E4833;
+  --topbar-text: #F3F1EA;
 
   /* Strict Spacing Scale */
   --space-xs: 8px;
@@ -23,8 +28,8 @@
   --space-2xl: 64px;
 
   /* Elevation & Shadows */
-  --shadow-subtle: 0 4px 20px rgba(34, 34, 34, 0.03);
-  --shadow-hover: 0 12px 32px rgba(34, 34, 34, 0.07);
+  --shadow-subtle: 0 4px 20px rgba(43, 48, 38, 0.04);
+  --shadow-hover: 0 12px 32px rgba(43, 48, 38, 0.08);
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -128,7 +133,8 @@ textarea {
 }
 
 /* Fallback styling for simple text pages like Cart, Wishlist, Login */
-main.app-content>div:only-child {
+main.app-content > div.empty-card-container,
+main.app-content > div.simple-page-container {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -145,7 +151,8 @@ main.app-content>div:only-child {
   overflow: hidden;
 }
 
-main.app-content>div:only-child::before {
+main.app-content > div.empty-card-container::before,
+main.app-content > div.simple-page-container::before {
   /* content: '🛍️'; */
   display: block;
   font-size: 3.5rem;
