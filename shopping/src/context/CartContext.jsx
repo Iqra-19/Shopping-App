@@ -71,7 +71,7 @@ export default function CartProvider( {children} ){
         );
     };
 
-    const value = { cart, addToCart, addToCart, increaseQuantity, decreaseQuantity, removeItem }
+    const value = { cart, addToCart, increaseQuantity, decreaseQuantity, removeItem }
 
     return(
         <CartContext.Provider value={value} >

@@ -6,7 +6,7 @@ export function useCart() {
 
     if(!context){
         throw new Error(
-            "useWishlist must be used within WishlistProvider"
+            "useCart must be used within CartProvider"
         );
     }
   
