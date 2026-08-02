@@ -1,0 +1,27 @@
+# React project
+shopping/node_modules/
+shopping/dist/
+shopping/dist-ssr/
+
+# Environment variables
+shopping/.env
+shopping/.env.local
+shopping/.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+shopping/.cache/
+shopping/.eslintcache
