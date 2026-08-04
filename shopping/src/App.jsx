@@ -8,6 +8,7 @@ import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
 import Wishlist from './pages/Wishlist'
 import Cart from './pages/Cart'
+import ProtectedRoute from './components/ProtectedRoute'
 
 import Register from './pages/Register'
 import Login from './pages/Login'
@@ -43,8 +44,22 @@ function App() {
               <Route path='/' element={ <Home products={products.slice(0,8)} /> } />
               <Route path='/product/:id' element={ <ProductDetails products={products} /> }/>
               <Route path='/shop' element={ <Shop products={products} /> } />
-              <Route path='/cart' element={ <Cart /> } />
-              <Route path='/wishlist' element={ <Wishlist /> } />
+              <Route 
+                  path='/cart' 
+                  element={ 
+                    <ProtectedRoute>
+                      <Cart/>
+                    </ProtectedRoute>
+                  } 
+              />
+              <Route 
+                  path='/wishlist' 
+                  element={ 
+                    <ProtectedRoute>
+                      <Wishlist/>
+                    </ProtectedRoute>
+                  } 
+              />
               <Route path='/login' element={ <Login /> } />
             </Routes>
           </main>

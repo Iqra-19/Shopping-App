@@ -4,11 +4,17 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWishlish } from '../hooks/useWishlish';
 import { useCart } from '../hooks/useCart';
+import { useAuth } from '../hooks/useAuth';
+
+import ProtectedRoute from './ProtectedRoute';
 
 function Navbar() {
 
   const {cart} = useCart();
   const [search, setSearch] = useState("");
+
+  const {user, logout} = useAuth();
+
   const navigate = useNavigate();
 
   const handleSearch = () => {
@@ -97,9 +103,23 @@ function Navbar() {
                 )}
               </NavLink>
               
-              <NavLink to="/login" className={({ isActive }) => isActive ? "action-btn active" : "action-btn"} title="Account" aria-label="Account">
+              {/* <NavLink to="/login" className={({ isActive }) => isActive ? "action-btn active" : "action-btn"} title="Account" aria-label="Account">
                 <i className="fa-regular fa-user action-icon"></i> 
-              </NavLink>
+              </NavLink> */}
+              {user ? (
+                  <button onClick={logout} className="action-btn">
+                      <i className="fa-solid fa-right-from-bracket"></i>
+                  </button>
+              ) : (
+                  <NavLink
+                      to="/login"
+                      className={({ isActive }) =>
+                          isActive ? "action-btn active" : "action-btn"
+                      }
+                  >
+                      <i className="fa-regular fa-user action-icon"></i>
+                  </NavLink>
+              )}              
 
               <NavLink to="/cart" className={({ isActive }) => isActive ? "action-btn active" : "action-btn"} title="Cart" aria-label="Cart">
                 <i className="fa-solid fa-bag-shopping action-icon"></i>

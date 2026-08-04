@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
 export const AuthContext = createContext();
@@ -15,6 +15,14 @@ export default function AuthProvider({ children }){
     const register = async (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
+
+    const login = async(email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const logout = async() => {
+        return signOut(auth);
+    }
     
     useEffect( () => {
         const unsubscribe = onAuthStateChanged( 
@@ -24,10 +32,10 @@ export default function AuthProvider({ children }){
                 setLoading(false);
             }
         )
-        return unsubscribe
+        return () => unsubscribe();   //cuz firebase returns a function
     }, [] );
     
-    const value = {user, register}
+    const value = {user, loading, register, login, logout}
 
     return (
         <AuthContext.Provider value={value}>
