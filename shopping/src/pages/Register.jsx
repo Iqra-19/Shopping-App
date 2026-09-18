@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext";
 import { useAuth } from "../hooks/useAuth";
 
 function Register() {
   
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -32,7 +32,7 @@ function Register() {
         
         try{
             setLoading(true);
-            await register(email, password);
+            await register(name, email, password);
             navigate('/login');
         }
 
@@ -68,6 +68,12 @@ function Register() {
 
         <form onSubmit={handleSubmit}>
 
+            <input type="text" 
+                   placeholder="Enter Name"
+                   value={name}
+                   onChange={ (e) => setName(e.target.value) }
+            />
+            
             <input 
                 type="email" 
                 placeholder="Enter Email"

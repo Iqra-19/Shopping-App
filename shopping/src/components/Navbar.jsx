@@ -6,8 +6,6 @@ import { useWishlish } from '../hooks/useWishlish';
 import { useCart } from '../hooks/useCart';
 import { useAuth } from '../hooks/useAuth';
 
-import ProtectedRoute from './ProtectedRoute';
-
 function Navbar() {
 
   const {cart} = useCart();

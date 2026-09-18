@@ -38,7 +38,7 @@ function App() {
     <Navbar />
 
           <main className="app-content">
-            <Routes>
+            <Routes>              
               <Route path='/register' element={<Register />}/>
 
               <Route path='/' element={ <Home products={products.slice(0,8)} /> } />
