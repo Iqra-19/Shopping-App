@@ -1,4 +1,4 @@
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useLocation} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 import Navbar from './components/Navbar'
@@ -18,6 +18,8 @@ import './App.css'
 function App() {
   
   const [products, setProducts] = useState([]);
+  const location = useLocation();
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
 
   useEffect( ()=> {
     fetch("https://dummyjson.com/products?limit=194")
@@ -35,11 +37,11 @@ function App() {
   
   return (
     <>
-    <Navbar />
+      {!isAuthPage && <Navbar />}
 
-          <main className="app-content">
-            <Routes>              
-              <Route path='/register' element={<Register />}/>
+      <main className={isAuthPage ? "app-content auth-full-layout" : "app-content"}>
+        <Routes>              
+          <Route path='/register' element={<Register />}/>
 
               <Route path='/' element={ <Home products={products.slice(0,8)} /> } />
               <Route path='/product/:id' element={ <ProductDetails products={products} /> }/>
@@ -64,8 +66,7 @@ function App() {
             </Routes>
           </main>
 
-          <Footer />
-     
+      {!isAuthPage && <Footer />}
     </>
   )
 }
