@@ -5,8 +5,8 @@ shopping/dist-ssr/
 
 # Environment variables
 shopping/.env
-shopping/.env.local
-shopping/.env.*.local
+shopping/.env.*
+!shopping/.env.example
 
 # Logs
 *.log
